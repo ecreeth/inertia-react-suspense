@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from '../Link';
-import PageContext from '../PageContext';
+import Link from '@/Link';
+import PageContext from '@/PageContext';
 
 const links = [
   { id: 1, url: '/', name: 'Home', icon: 'ios-analytics' },

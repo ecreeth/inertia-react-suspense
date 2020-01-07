@@ -1,10 +1,11 @@
 import React, { Suspense, createElement } from 'react';
 import ReactDOM from 'react-dom';
 import { Inertia } from '@inertiajs/inertia';
-import Aside from './components/Aside';
-import PageContext from './PageContext';
-import Header from './components/Header';
-import ErrorBoundary from './ErrorBoundary';
+
+import Aside from 'components/Aside';
+import Header from 'components/Header';
+import PageContext from '@/PageContext';
+import ErrorBoundary from '@/ErrorBoundary';
 
 const app = document.getElementById('app');
 
@@ -14,7 +15,7 @@ function App() {
   React.useEffect(() => {
     Inertia.init({
       initialPage: JSON.parse(app.dataset.page),
-      resolveComponent: name => React.lazy(() => import(`./Pages/${name}`)),
+      resolveComponent: name => React.lazy(() => import(`@/Pages/${name}`)),
       updatePage: (component, props, { preserveState }) => {
         setPage({
           props,
@@ -40,7 +41,7 @@ function App() {
       <PageContext.Provider value={page.props}>
         <div className="font-sans m-0 antialiased leading-none">
           <Header />
-          <div className="container mx-auto">
+          <section className="container mx-auto">
             <div className="flex w-full min-w-full rounded-sm mt-4">
               <Aside />
               <main className="p-4 w-full bg-white ml-4 font-light mb-5 rounded border border-gray-200">
@@ -49,7 +50,7 @@ function App() {
                 </Suspense>
               </main>
             </div>
-          </div>
+          </section>
         </div>
       </PageContext.Provider>
     </ErrorBoundary>
