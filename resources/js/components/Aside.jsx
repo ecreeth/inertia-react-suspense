@@ -39,7 +39,7 @@ export default () => (
           <div key={link}>
             <a className="block py-3 px-5" href="#">
               <div className="text-gray-700">
-                <i className="icon ion-ios-wallet mr-2 text-gray-600 inline-block"></i>
+                <span>#&nbsp;</span>
                 {link}
               </div>
             </a>

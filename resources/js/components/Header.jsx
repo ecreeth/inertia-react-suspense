@@ -3,14 +3,14 @@ import Link from '@/Link';
 import PageContext from '@/PageContext';
 
 const links = [
-  { id: 1, url: '/', name: 'Home', icon: 'ios-analytics' },
+  { id: 1, url: '/', name: 'Home' },
   {
     id: 2,
     url: '/about',
     name: 'About',
     icon: 'ios-information-circle-outline'
   },
-  { id: 3, url: '/contact', name: 'Contact', icon: 'ios-help-buoy' }
+  { id: 3, url: '/contact', name: 'Contact' }
 ];
 
 export default () => {
@@ -39,9 +39,7 @@ export default () => {
                 href={link.url}
                 className="text-gray-800 text-sm hover:text-blue-600 mr-5 cursor-pointer"
               >
-                <i
-                  className={`icon ion-${link.icon} mr-1 text-gray-600 inline-block`}
-                ></i>
+                <span>#&nbsp;</span>
                 {link.name}
               </Link>
             ))}

@@ -2,8 +2,8 @@ import React, { Suspense, createElement } from 'react';
 import ReactDOM from 'react-dom';
 import { Inertia } from '@inertiajs/inertia';
 
-import Aside from 'components/Aside';
-import Header from 'components/Header';
+import Aside from 'Components/Aside';
+import Header from 'Components/Header';
 import PageContext from '@/PageContext';
 import ErrorBoundary from '@/ErrorBoundary';
 
