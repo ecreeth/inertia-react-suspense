@@ -10,6 +10,7 @@ import ErrorBoundary from '@/ErrorBoundary';
 const app = document.getElementById('app');
 
 function App() {
+  console.log(app.dataset.page)
   const [page, setPage] = React.useState({});
 
   React.useEffect(() => {
