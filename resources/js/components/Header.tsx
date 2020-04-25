@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from '@/Link';
-import PageContext from '@/PageContext';
+import Link from '../Link';
+import PageContext from '../PageContext';
 
 const links = [
   { id: 1, url: '/', name: 'Home' },
@@ -16,7 +16,7 @@ const links = [
 export default () => {
   const { page } = React.useContext(PageContext);
   return (
-    <header>
+    <div>
       <nav className="bg-white border-b">
         <div className="container mx-auto flex items-center justify-between py-4 pl-1">
           <div>
@@ -46,6 +46,6 @@ export default () => {
           </div>
         </div>
       </nav>
-    </header>
+    </div>
   );
 };

@@ -1,5 +1,4 @@
 const mix = require('laravel-mix');
-const tailwindcss = require('tailwindcss');
 require('laravel-mix-purgecss');
 
 /*
@@ -14,23 +13,22 @@ require('laravel-mix-purgecss');
  */
 
 mix
-  .react('resources/js/app.js', 'public/js')
-  .sass('resources/sass/app.scss', 'public/css')
+  .ts('resources/js/app', 'public/js')
+  .extract()
+  .postCss('resources/css/app.css', 'public/css', [require('tailwindcss')])
   .purgeCss()
-  .options({
-    processCssUrls: false,
-    postCss: [tailwindcss('tailwind.config.js')]
-  })
   .webpackConfig({
     output: { chunkFilename: '[name].js?id=[chunkhash]' },
     resolve: {
-      alias: {
-        '@': path.resolve('resources/js'),
-        'Components': path.resolve('resources/js/components')
-      }
+      extensions: ['*', '.js', '.jsx', '.ts', '.tsx']
+    },
+    module: {
+      rules: [
+        {
+          test: /\.tsx?$/,
+          loader: 'ts-loader',
+          exclude: /node_modules/
+        }
+      ]
     }
-  })
-  .version()
-  .sourceMaps();
-
-  mix.extract();
+  });
