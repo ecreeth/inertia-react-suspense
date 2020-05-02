@@ -13,7 +13,7 @@ const path = require('path');
 
 mix
   .ts('resources/js/app', 'public/js')
-  .extract()
+  // .extract()
   .postCss('resources/css/app.css', 'public/css', [require('tailwindcss')])
   .webpackConfig({
     output: { chunkFilename: '[name].js?id=[chunkhash]' },
@@ -33,4 +33,5 @@ mix
       ]
     }
   });
-  mix.browserSync('inertia-react-suspense.test');
+
+mix.browserSync('inertia-react-suspense.test');

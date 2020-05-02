@@ -16,6 +16,7 @@ function App() {
       initialPage: JSON.parse(app.dataset.page),
       resolveComponent: name => React.lazy(() => import(`./pages/${name}`)),
       updatePage: (component, props, { preserveState }) => {
+        console.log('Page updated...');
         dispatch({
           type: 'SET_PAGE',
           page: {
