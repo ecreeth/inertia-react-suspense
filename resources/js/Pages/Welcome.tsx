@@ -2,6 +2,7 @@ import React from 'react';
 import PageContext from '../PageContext';
 
 function Welcome(props) {
+  console.log('Welcome page..');
   const { counter, dispatch } = React.useContext(PageContext);
   return (
     <div>

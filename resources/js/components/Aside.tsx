@@ -13,11 +13,6 @@ const menus = [
       'Multimedia'
     ]
   },
-  // {
-  //   id: 2,
-  //   title: 'Seguridad',
-  //   links: ['Roles', 'Permisos']
-  // },
   {
     id: 3,
     title: 'Subscripciones',
