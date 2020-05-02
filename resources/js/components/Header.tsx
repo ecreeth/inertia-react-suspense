@@ -1,5 +1,5 @@
 import React from 'react';
-import { InertiaLink as Link } from '@inertiajs/inertia-react';
+import Link from './Link';
 
 const links = [
   { id: 1, url: '/', name: 'Home' },
