@@ -18,5 +18,6 @@ export const initialState = {
     key: null,
     props: {}
   },
-  counter: 0
+  counter: 0,
+  dispatch: action => {}
 };

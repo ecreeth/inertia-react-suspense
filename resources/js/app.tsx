@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Aside from './components/Aside';
 import Spinner from './components/Spinner';
 import PageContext from './PageContext';
-import { reducer, initialState } from './reducer';
+import { reducer, initialState } from './services/reducer';
 
 const app: HTMLDivElement | any = document.getElementById('app');
 
@@ -36,7 +36,7 @@ function App() {
     React.createElement(state.page.component, { ...state.page });
 
   return (
-    <PageContext.Provider value={{ ...state.page.props, state, dispatch }}>
+    <PageContext.Provider value={{ ...state, dispatch }}>
       <div className="font-sans m-0 antialiased leading-none">
         <Header />
         <section className="container mx-auto">
