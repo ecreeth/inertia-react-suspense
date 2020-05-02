@@ -25,7 +25,7 @@ const menus = [
   }
 ];
 
-export const Aside = () => (
+const Aside = () => (
   <div className="w-1/4 md:w-2/6 h-full bg-gray-800 rounded font-light mb-5">
     <div className="bg-gray-900 h-10 rounded m-3 mb-4" />
     {menus.map(menu => (
@@ -50,3 +50,5 @@ export const Aside = () => (
     ))}
   </div>
 );
+
+export default Aside;
