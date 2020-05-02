@@ -2,21 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Inertia } from '@inertiajs/inertia';
 
-import Header from './components/Header';
-import Aside from './components/Aside';
-import Spinner from './components/Spinner';
 import PageContext from './PageContext';
+import { Header, Aside, Spinner } from './components';
 import { reducer, initialState } from './services/reducer';
 
 const app: HTMLDivElement | any = document.getElementById('app');
 
 function App() {
-  const initialPage = JSON.parse(app.dataset.page);
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
   React.useEffect(() => {
     Inertia.init({
-      initialPage,
+      initialPage: JSON.parse(app.dataset.page),
       resolveComponent: name => React.lazy(() => import(`./pages/${name}`)),
       updatePage: (component, props, { preserveState }) => {
         dispatch({
