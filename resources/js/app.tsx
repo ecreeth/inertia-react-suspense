@@ -6,37 +6,37 @@ import Header from './components/Header';
 import Aside from './components/Aside';
 import Spinner from './components/Spinner';
 import PageContext from './PageContext';
+import { reducer, initialState } from './reducer';
 
 const app: HTMLDivElement | any = document.getElementById('app');
 
 function App() {
   const initialPage = JSON.parse(app.dataset.page);
-  const [counter, setCounter] = React.useState(0);
-  const [page, setPage]: any = React.useState({
-    component: null,
-    key: null,
-    props: {}
-  });
+  const [state, dispatch] = React.useReducer(reducer, initialState);
 
   React.useEffect(() => {
     Inertia.init({
       initialPage,
       resolveComponent: name => React.lazy(() => import(`./pages/${name}`)),
       updatePage: (component, props, { preserveState }) => {
-        setPage({
-          component,
-          key: preserveState ? page.key : Date.now(),
-          props
+        dispatch({
+          type: 'SET_PAGE',
+          page: {
+            component,
+            key: preserveState ? state.page.key : Date.now(),
+            props
+          }
         });
       }
     });
   }, []);
 
   let children =
-    page.component && React.createElement(page.component, { ...page });
+    state.page.component &&
+    React.createElement(state.page.component, { ...state.page });
 
   return (
-    <PageContext.Provider value={{ ...page.props, counter, setCounter }}>
+    <PageContext.Provider value={{ ...state.page.props, state, dispatch }}>
       <div className="font-sans m-0 antialiased leading-none">
         <Header />
         <section className="container mx-auto">

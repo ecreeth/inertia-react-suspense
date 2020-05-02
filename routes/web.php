@@ -16,17 +16,8 @@ use Inertia\Inertia;
 
 Inertia::share('app.name', Config::get('app.name'));
 
-Route::get('/', fn () => inertia('Welcome', [
-  'page' => 'Home',
-  'foo'  => 'This is the home page',
-]));
+Route::get('/', fn () => inertia('Welcome'));
 
-Route::get('/about', fn () => inertia('About', [
-  'page' => 'About',
-  'foo'  => 'This is the about page',
-]));
+Route::get('/about', fn () => inertia('About'));
 
-Route::get('/contact', fn () => inertia('Contact', [
-  'page' => 'Contact',
-  'foo'  => 'This is the contact page',
-]));
+Route::get('/contact', fn () => inertia('Contact'));

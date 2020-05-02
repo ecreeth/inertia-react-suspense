@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { InertiaLink as Link } from '@inertiajs/inertia-react';
-import PageContext from '../PageContext';
 
 const links = [
   { id: 1, url: '/', name: 'Home' },
@@ -9,7 +8,6 @@ const links = [
 ];
 
 const Header = () => {
-  const { page } = useContext(PageContext);
   return (
     <div>
       <nav className="bg-gray-900">
@@ -19,7 +17,7 @@ const Header = () => {
               href="#"
               className="block flex items-center font-extrabold text-gray-100"
             >
-              Current Page: {page}
+              eCreeth
             </a>
           </div>
           <div className="hidden w-full flex-grow lg:flex justify-end lg:items-center lg:w-auto uppercase font-light">
