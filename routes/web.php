@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\{Config, Route};
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,17 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', fn() => inertia('Welcome', [
+Inertia::share('app.name', Config::get('app.name'));
+
+Route::get('/', fn () => inertia('Welcome', [
   'page' => 'Home',
   'foo'  => 'This is the home page',
 ]));
 
-Route::get('/about', fn() => inertia('About', [
+Route::get('/about', fn () => inertia('About', [
   'page' => 'About',
   'foo'  => 'This is the about page',
 ]));
 
-Route::get('/contact', fn() => inertia('Contact', [
+Route::get('/contact', fn () => inertia('Contact', [
   'page' => 'Contact',
   'foo'  => 'This is the contact page',
 ]));

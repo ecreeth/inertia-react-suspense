@@ -1,35 +1,25 @@
-import React from 'react';
-import Link from '../Link';
+import React, { useContext } from 'react';
+import { InertiaLink as Link } from '@inertiajs/inertia-react';
 import PageContext from '../PageContext';
 
 const links = [
   { id: 1, url: '/', name: 'Home' },
-  {
-    id: 2,
-    url: '/about',
-    name: 'About',
-    icon: 'ios-information-circle-outline'
-  },
+  { id: 2, url: '/about', name: 'About' },
   { id: 3, url: '/contact', name: 'Contact' }
 ];
 
-export default () => {
-  const { page } = React.useContext(PageContext);
+const Header = () => {
+  const { page } = useContext(PageContext);
   return (
     <div>
-      <nav className="bg-white border-b">
-        <div className="container mx-auto flex items-center justify-between py-4 pl-1">
+      <nav className="bg-gray-900">
+        <div className="container mx-auto flex items-center justify-between py-6 pl-1">
           <div>
             <a
               href="#"
-              className="block flex items-center font-extrabold text-gray-700"
+              className="block flex items-center font-extrabold text-gray-100"
             >
-              <img
-                src="https://raw.githubusercontent.com/ecreeth/tailwind-admin/master/logo.jpg"
-                className="h-10"
-                alt="Logo"
-              />
-              eCreeth: {page}
+              Current Page: {page}
             </a>
           </div>
           <div className="hidden w-full flex-grow lg:flex justify-end lg:items-center lg:w-auto uppercase font-light">
@@ -37,7 +27,7 @@ export default () => {
               <Link
                 key={link.id}
                 href={link.url}
-                className="text-gray-800 text-sm hover:text-blue-600 mr-5 cursor-pointer"
+                className="text-gray-100 text-sm hover:text-blue-600 mr-5 cursor-pointer"
               >
                 <span>#&nbsp;</span>
                 {link.name}
@@ -49,3 +39,5 @@ export default () => {
     </div>
   );
 };
+
+export default Header;

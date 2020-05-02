@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PageContext from '../PageContext';
 
 function Welcome(props) {
-  const [counter, setCounter] = useState(0);
+  const {counter, setCounter} = React.useContext(PageContext);
   return (
     <div>
       <h1 className="text-xl text-black text-center font-bold">

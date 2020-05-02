@@ -1,6 +1,5 @@
 const mix = require('laravel-mix');
-require('laravel-mix-purgecss');
-
+const path = require('path');
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -16,10 +15,12 @@ mix
   .ts('resources/js/app', 'public/js')
   .extract()
   .postCss('resources/css/app.css', 'public/css', [require('tailwindcss')])
-  .purgeCss()
   .webpackConfig({
     output: { chunkFilename: '[name].js?id=[chunkhash]' },
     resolve: {
+      alias: {
+        '@': path.resolve('resources/js')
+      },
       extensions: ['*', '.js', '.jsx', '.ts', '.tsx']
     },
     module: {
@@ -32,3 +33,4 @@ mix
       ]
     }
   });
+  mix.browserSync('inertia-react-suspense.test');

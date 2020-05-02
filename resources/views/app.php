@@ -7,7 +7,7 @@
   <link href="<?php echo mix('/css/app.css') ?>" rel="stylesheet" />
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-200">
 
   <div id="app" data-page="<?php echo e(json_encode($page)) ?>"></div>
 

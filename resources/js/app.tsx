@@ -1,52 +1,49 @@
-import React, { Suspense, createElement } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import { Inertia } from '@inertiajs/inertia';
 
-let dom: any = ReactDOM;
-
-import Aside from './components/Aside';
 import Header from './components/Header';
+import Aside from './components/Aside';
+import Spinner from './components/Spinner';
 import PageContext from './PageContext';
 
-const app: any = document.getElementById('app');
+const app: HTMLDivElement | any = document.getElementById('app');
 
 function App() {
-  console.log(app.dataset.page);
-  const [page, setPage]: any = React.useState({});
+  const initialPage = JSON.parse(app.dataset.page);
+  const [counter, setCounter] = React.useState(0);
+  const [page, setPage]: any = React.useState({
+    component: null,
+    key: null,
+    props: {}
+  });
 
   React.useEffect(() => {
     Inertia.init({
-      initialPage: JSON.parse(app.dataset.page),
-      resolveComponent: name => React.lazy(() => import(`./Pages/${name}`)),
+      initialPage,
+      resolveComponent: name => React.lazy(() => import(`./pages/${name}`)),
       updatePage: (component, props, { preserveState }) => {
         setPage({
-          props,
           component,
-          key: preserveState ? page.key : Date.now()
+          key: preserveState ? page.key : Date.now(),
+          props
         });
       }
     });
   }, []);
 
-  if (!page.component) {
-    return null;
-  }
-
-  let children = createElement(
-    page.component,
-    { key: page.key, props: page.props },
-    null
-  );
+  let children =
+    page.component && React.createElement(page.component, { ...page });
 
   return (
-    <PageContext.Provider value={page.props}>
+    <PageContext.Provider value={{ ...page.props, counter, setCounter }}>
       <div className="font-sans m-0 antialiased leading-none">
         <Header />
         <section className="container mx-auto">
           <div className="flex w-full min-w-full rounded-sm mt-4">
             <Aside />
-            <main className="p-4 w-full bg-white ml-4 font-light mb-5 rounded border border-gray-200">
-              <Suspense fallback={<span>Loading...</span>}>{children}</Suspense>
+            <main className="p-4 w-full bg-white ml-4 font-light mb-5 rounded shadow-lg">
+              <React.Suspense fallback={<Spinner />}>{children}</React.Suspense>
             </main>
           </div>
         </section>
@@ -55,4 +52,4 @@ function App() {
   );
 }
 
-dom.createRoot(app).render(<App />);
+ReactDOM.render(<App />, app);

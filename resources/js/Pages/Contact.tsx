@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default props => {
+const Contact = props => {
   return (
     <div>
       <h1 className="text-xl text-black text-center font-bold">Contact</h1>
@@ -8,3 +8,5 @@ export default props => {
     </div>
   );
 };
+
+export default Contact;
