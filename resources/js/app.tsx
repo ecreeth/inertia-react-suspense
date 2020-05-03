@@ -6,7 +6,7 @@ import PageContext from './services/PageContext';
 import { Header, Aside, Spinner } from './components';
 import { reducer, initialState } from './services/reducer';
 
-const app: HTMLElement | any = document.getElementById('app');
+const app: any = document.getElementById('app') as HTMLElement;
 
 function App() {
   const [state, dispatch] = React.useReducer(reducer, initialState);
