@@ -1,8 +1,7 @@
 import React from 'react';
-import PageContext from '../PageContext';
+import PageContext from '../services/PageContext';
 
-function Welcome(props) {
-  console.log('Welcome page..');
+const Welcome = () => {
   const { counter, dispatch } = React.useContext(PageContext);
   return (
     <div>
@@ -17,6 +16,6 @@ function Welcome(props) {
       </button>
     </div>
   );
-}
+};
 
 export default Welcome;

@@ -15,7 +15,6 @@ export const reducer = (state, action) => {
 export const initialState = {
   page: {
     component: null,
-    key: null,
     props: {}
   },
   counter: 0,

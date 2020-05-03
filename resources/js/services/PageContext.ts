@@ -1,4 +1,4 @@
 import { createContext } from 'react';
-import { initialState } from './services/reducer';
+import { initialState } from './reducer';
 
 export default createContext(initialState);

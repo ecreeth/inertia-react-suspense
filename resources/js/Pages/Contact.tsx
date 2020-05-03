@@ -1,7 +1,6 @@
 import React from 'react';
 
-const Contact = props => {
-  console.log('Contact page..');
+const Contact = () => {
   return (
     <div>
       <h1 className="text-xl text-black text-center font-bold">Contact</h1>
