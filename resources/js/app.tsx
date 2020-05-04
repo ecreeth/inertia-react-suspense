@@ -18,10 +18,8 @@ function App() {
       updatePage: (component, props) => {
         dispatch({
           type: 'SET_PAGE',
-          page: {
-            component,
-            props
-          }
+          component,
+          props
         });
       }
     });
@@ -36,8 +34,7 @@ function App() {
             <Aside />
             <main className="p-4 w-full bg-white ml-4 font-light mb-5 rounded shadow-lg">
               <React.Suspense fallback={<Spinner />}>
-                {state.page.component &&
-                  React.createElement(state.page.component)}
+                {state.component && React.createElement(state.component)}
               </React.Suspense>
             </main>
           </div>

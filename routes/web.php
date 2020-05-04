@@ -14,7 +14,7 @@ use Inertia\Inertia;
 |
 */
 
-Inertia::share('app.name', Config::get('app.name'));
+Inertia::share('name', Config::get('app.name'));
 
 Route::get('/', fn () => inertia('Welcome'));
 

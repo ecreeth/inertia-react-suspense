@@ -5,18 +5,14 @@ export const reducer = (state, action) => {
     case 'DECREMENT':
       return { ...state, counter: state.counter - 1 };
     case 'SET_PAGE':
-      Object.assign(state.page, action.page);
-      return { ...state };
+      return { ...state, component: action.component, ...action.props };
     default:
       throw new Error();
   }
 };
 
 export const initialState = {
-  page: {
-    component: null,
-    props: {}
-  },
+  component: null,
   counter: 0,
   dispatch: action => {}
 };
