@@ -1,8 +1,8 @@
 import React from 'react';
-import PageContext from '../services/PageContext';
+import { usePageContext } from '../services/PageContext';
 
 const Welcome = () => {
-  const { counter, dispatch } = React.useContext(PageContext);
+  const { counter, dispatch } = usePageContext();
   return (
     <div>
       <h1 className="text-xl text-black text-center font-bold">

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Inertia } from '@inertiajs/inertia';
 
-import PageContext from './services/PageContext';
+import { PageProvider } from './services/PageContext';
 import { Header, Aside, Spinner } from './components';
 import { reducer, initialState } from './services/reducer';
 
@@ -26,7 +26,7 @@ function App() {
   }, []);
 
   return (
-    <PageContext.Provider value={{ ...state, dispatch }}>
+    <PageProvider value={{ ...state, dispatch }}>
       <div className="font-sans m-0 antialiased leading-none">
         <Header />
         <section className="container mx-auto">
@@ -40,7 +40,7 @@ function App() {
           </div>
         </section>
       </div>
-    </PageContext.Provider>
+    </PageProvider>
   );
 }
 

@@ -1,4 +1,12 @@
-import { createContext } from 'react';
+import { createContext, useContext } from 'react';
 import { initialState } from './reducer';
 
-export default createContext(initialState);
+const PageContext = createContext(initialState);
+
+export const PageProvider = PageContext.Provider;
+
+export function usePageContext() {
+  return useContext(PageContext);
+}
+
+PageContext.displayName = 'PageContext';
