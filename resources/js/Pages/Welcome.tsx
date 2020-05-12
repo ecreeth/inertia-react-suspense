@@ -5,14 +5,14 @@ const Welcome = () => {
   const { counter, dispatch } = usePageContext();
   return (
     <div>
-      <h1 className="text-xl text-black dark:text-white text-center font-bold">
+      <h1 className="text-xl dark:text-white text-center font-bold">
         Counter Value: {counter}
       </h1>
       <button
-        className="border px-4 py-1 rounded text-center"
+        className="border dark:border-gray-900 px-4 py-1 dark:text-white rounded text-center"
         onClick={() => dispatch({ type: 'INCREMENT' })}
       >
-        Add +
+       Add +1
       </button>
     </div>
   );

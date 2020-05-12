@@ -27,7 +27,7 @@ function App() {
 
   return (
     <PageProvider value={{ ...state, dispatch }}>
-      <div className="font-sans m-0 antialiased leading-none">
+      <div className="font-sans m-0 antialiased leading-none dark:bg-gray-600">
         <Header />
         <section className="container mx-auto">
           <div className="flex w-full min-w-full rounded-sm mt-4">
