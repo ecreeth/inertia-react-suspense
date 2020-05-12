@@ -1,9 +1,14 @@
 module.exports = {
-  purge: [
-    './resources/**/*.tsx',
-    './resources/js/pages/*.tsx',
-    './resources/js/components/*.tsx'
-  ],
+  purge: {
+    options: {
+      whitelist: ['dark-mode']
+    },
+    content: [
+      './resources/**/*.tsx',
+      './resources/js/pages/*.tsx',
+      './resources/js/components/*.tsx'
+    ]
+  },
   target: 'relaxed',
   prefix: '',
   important: false,
