@@ -5,7 +5,7 @@ const Welcome = () => {
   const { counter, dispatch } = usePageContext();
   return (
     <div>
-      <h1 className="text-xl text-black text-center font-bold">
+      <h1 className="text-xl text-black dark:text-white text-center font-bold">
         Counter Value: {counter}
       </h1>
       <button

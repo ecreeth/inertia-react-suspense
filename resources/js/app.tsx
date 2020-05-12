@@ -32,7 +32,7 @@ function App() {
         <section className="container mx-auto">
           <div className="flex w-full min-w-full rounded-sm mt-4">
             <Aside />
-            <main className="p-4 w-full bg-white ml-4 font-light mb-5 rounded shadow-lg">
+            <main className="p-4 w-full bg-white dark:bg-gray-800 ml-4 font-light mb-5 rounded shadow-lg">
               <React.Suspense fallback={<Spinner />}>
                 {state.component && React.createElement(state.component)}
               </React.Suspense>

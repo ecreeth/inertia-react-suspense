@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from './Link';
 import { usePageContext } from '../services/PageContext';
+import ThemeSwitch from './ThemeSwitch';
 
 const links = [
   { id: 1, url: '/', name: 'Home' },
@@ -34,6 +35,7 @@ const Header = () => {
                 {link.name}
               </Link>
             ))}
+            <ThemeSwitch />
           </div>
         </div>
       </nav>

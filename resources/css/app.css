@@ -4,6 +4,11 @@
 
 @tailwind utilities;
 
+.dark-mode-transition * {
+  @apply transition duration-500 ease-in-out;
+}
+
+
 /* Make clicks pass-through */
 #nprogress {
   pointer-events: none;
