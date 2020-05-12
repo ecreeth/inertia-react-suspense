@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from './Link';
+import { usePageContext } from '../services/PageContext';
 
 const links = [
   { id: 1, url: '/', name: 'Home' },
@@ -8,6 +9,8 @@ const links = [
 ];
 
 const Header = () => {
+  const { counter } = usePageContext();
+
   return (
     <div>
       <nav className="bg-gray-900">
@@ -17,7 +20,7 @@ const Header = () => {
               href="#"
               className="block flex items-center font-extrabold text-gray-100"
             >
-              eCreeth
+              Counter Value: {counter}
             </a>
           </div>
           <div className="hidden w-full flex-grow lg:flex justify-end lg:items-center lg:w-auto uppercase font-light">

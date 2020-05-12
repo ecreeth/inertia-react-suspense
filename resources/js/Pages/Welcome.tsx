@@ -6,7 +6,7 @@ const Welcome = () => {
   return (
     <div>
       <h1 className="text-xl text-black text-center font-bold">
-        Welcome: {counter}
+        Counter Value: {counter}
       </h1>
       <button
         className="border px-4 py-1 rounded text-center"

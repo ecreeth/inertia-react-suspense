@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import ReactDOM from 'react-dom';
 import { Inertia } from '@inertiajs/inertia';
 
@@ -6,10 +6,10 @@ import { PageProvider } from './services/PageContext';
 import { Header, Aside, Spinner } from './components';
 import { reducer, initialState } from './services/reducer';
 
-const app: any = document.getElementById('app') as HTMLElement;
+const app: any = document.getElementById('app');
 
 function App() {
-  const [state, dispatch] = React.useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   React.useEffect(() => {
     Inertia.init({
