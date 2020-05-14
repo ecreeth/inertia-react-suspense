@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from './Link';
-import { usePageContext } from '../services/PageContext';
 import ThemeSwitch from './ThemeSwitch';
+import HeaderCounter from './HeaderCounter';
 
 const links = [
   { id: 1, url: '/', name: 'Home' },
@@ -10,20 +10,11 @@ const links = [
 ];
 
 const Header = () => {
-  const { counter } = usePageContext();
-
   return (
     <div>
       <nav className="bg-gray-900">
         <div className="container mx-auto flex items-center justify-between py-6 pl-1">
-          <div>
-            <a
-              href="#"
-              className="block flex items-center font-extrabold text-gray-100"
-            >
-              Counter Value: {counter}
-            </a>
-          </div>
+          <HeaderCounter />
           <div className="hidden w-full flex-grow lg:flex justify-end lg:items-center lg:w-auto uppercase font-light">
             {links.map(link => (
               <Link

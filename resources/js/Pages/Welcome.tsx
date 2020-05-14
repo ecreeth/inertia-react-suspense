@@ -1,8 +1,9 @@
 import React from 'react';
-import { usePageContext } from '../services/PageContext';
+import { useRecoilState } from 'recoil';
+import { counterState } from '../services/atom/index';
 
 const Welcome = () => {
-  const { counter, dispatch } = usePageContext();
+  const [counter, setCounter] = useRecoilState(counterState);
   return (
     <div>
       <h1 className="text-xl dark:text-white text-center font-bold">
@@ -10,9 +11,9 @@ const Welcome = () => {
       </h1>
       <button
         className="border dark:border-gray-900 px-4 py-1 dark:text-white rounded text-center"
-        onClick={() => dispatch({ type: 'INCREMENT' })}
+        onClick={() => setCounter(counter + 1)}
       >
-       Add +1
+        Add +1
       </button>
     </div>
   );
