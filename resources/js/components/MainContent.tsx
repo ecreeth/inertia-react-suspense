@@ -2,7 +2,7 @@ import React from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 import { Inertia } from '@inertiajs/inertia';
 import { currentComponent, pageProps } from '../services/recoil/atoms';
-import { Spinner } from '../components/index';
+import { Spinner } from './index';
 
 function MainContent({ initialPage, resolveComponent }) {
   const [page, setPage]: any = useRecoilState(currentComponent);

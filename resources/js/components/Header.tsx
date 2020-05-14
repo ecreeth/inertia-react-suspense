@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from './Link';
-import ThemeSwitch from './ThemeSwitch';
 import HeaderCounter from './HeaderCounter';
 
 const links = [
@@ -26,7 +25,6 @@ const Header = () => {
                 {link.name}
               </Link>
             ))}
-            <ThemeSwitch />
           </div>
         </div>
       </nav>

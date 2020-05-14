@@ -1,16 +1,16 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
-import { counterState } from '../services/atom/index';
+import { counterState } from '../services/recoil/atoms';
 
 const Welcome = () => {
   const [counter, setCounter] = useRecoilState(counterState);
   return (
     <div>
-      <h1 className="text-xl dark:text-white text-center font-bold">
+      <h1 className="text-xl text-white text-center font-bold">
         Counter Value: {counter}
       </h1>
       <button
-        className="border dark:border-gray-900 px-4 py-1 dark:text-white rounded text-center"
+        className="border border-gray-900 px-4 py-1 text-white rounded text-center"
         onClick={() => setCounter(counter + 1)}
       >
         Add +1

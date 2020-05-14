@@ -1,8 +1,5 @@
 module.exports = {
   purge: {
-    options: {
-      whitelist: ['dark-mode']
-    },
     content: [
       './resources/**/*.tsx',
       './resources/js/pages/*.tsx',
@@ -14,7 +11,6 @@ module.exports = {
   important: false,
   separator: ':',
   theme: {
-    darkSelector: '.dark-mode',
     screens: {
       sm: '640px',
       md: '768px',
@@ -652,13 +648,13 @@ module.exports = {
     alignSelf: ['responsive'],
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
-    backgroundColor: ['dark', 'responsive', 'hover', 'focus'],
+    backgroundColor: ['responsive', 'hover', 'focus'],
     backgroundOpacity: ['responsive', 'hover', 'focus'],
     backgroundPosition: ['responsive'],
     backgroundRepeat: ['responsive'],
     backgroundSize: ['responsive'],
     borderCollapse: ['responsive'],
-    borderColor: ['dark', 'responsive', 'hover', 'focus'],
+    borderColor: ['responsive', 'hover', 'focus'],
     borderOpacity: ['responsive', 'hover', 'focus'],
     borderRadius: ['responsive'],
     borderStyle: ['responsive'],
@@ -712,7 +708,7 @@ module.exports = {
     strokeWidth: ['responsive'],
     tableLayout: ['responsive'],
     textAlign: ['responsive'],
-    textColor: ['dark', 'responsive', 'hover', 'focus'],
+    textColor: ['responsive', 'hover', 'focus'],
     textOpacity: ['responsive', 'hover', 'focus'],
     textDecoration: ['responsive', 'hover', 'focus'],
     textTransform: ['responsive'],
@@ -745,5 +741,5 @@ module.exports = {
     transitionDelay: ['responsive']
   },
   corePlugins: {},
-  plugins: [require('tailwindcss-dark-mode')()]
+  plugins: []
 };
