@@ -16,8 +16,13 @@ use Inertia\Inertia;
 
 Inertia::share('name', Config::get('app.name'));
 
-Route::get('/', fn () => inertia('Welcome'));
+// Route::middleware('auth')->group(function () {
 
-Route::get('/about', fn () => inertia('About'));
+  Route::get('/', fn () => inertia('Welcome'));
 
-Route::get('/contact', fn () => inertia('Contact'));
+  Route::get('/about', fn () => inertia('About'));
+
+  Route::get('/contact', fn () => inertia('Contact'));
+// });
+
+Route::get('/login', fn () => inertia('Auth/Login'))->name('login');
