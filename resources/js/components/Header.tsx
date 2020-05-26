@@ -8,7 +8,7 @@ const links = [
   { id: 3, url: '/contact', name: 'Contact' }
 ];
 
-const Header = () => {
+function Header() {
   return (
     <div>
       <nav className="bg-gray-900">
@@ -30,6 +30,6 @@ const Header = () => {
       </nav>
     </div>
   );
-};
+}
 
 export default Header;

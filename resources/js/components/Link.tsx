@@ -1,6 +1,6 @@
 // @ts-nocheck
+import React, { useCallback } from 'react';
 import { Inertia, shouldIntercept } from '@inertiajs/inertia';
-import { createElement, useCallback } from 'react';
 
 const noop = () => undefined;
 
@@ -34,5 +34,9 @@ export default function Link({
     [data, href, method, onClick, preserveScroll, preserveState, replace]
   );
 
-  return createElement('a', { ...props, href, onClick: visit }, children);
+  return (
+    <a href={href} onClick={visit} {...props}>
+      {children}
+    </a>
+  );
 }

@@ -4,7 +4,6 @@ import { counterState } from '../services/recoil/atoms';
 
 function HeaderCounter() {
   const counter = useRecoilValue(counterState);
-
   return (
     <div>
       <a

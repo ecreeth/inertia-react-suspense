@@ -34,4 +34,4 @@ mix
     }
   });
 
-mix.browserSync('inertia-react-suspense.test');
+mix.browserSync('http://127.0.0.1:8000');

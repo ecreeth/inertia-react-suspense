@@ -1,22 +1,27 @@
 import React from 'react';
+import Link from './Link';
 
 const menus = [
   {
     id: 1,
     title: 'Configuraciones',
     links: [
-      'Pages',
-      'Users',
-      'Products',
-      'Articles',
-      'Categories',
-      'Multimedia'
+      { id: 1, url: '/config/users', name: 'Pages' },
+      { id: 2, url: '/config/users', name: 'Users' },
+      { id: 3, url: '/config/users', name: 'Products' },
+      { id: 4, url: '/config/users', name: 'Articles' },
+      { id: 5, url: '/config/users', name: 'Categories' },
+      { id: 6, url: '/config/users', name: 'Multimedia' }
     ]
   },
   {
     id: 3,
     title: 'Subscripciones',
-    links: ['Planes', 'Invoices', 'Information']
+    links: [
+      { id: 1, url: '/config/users', name: 'Planes' },
+      { id: 2, url: '/config/users', name: 'Invoices' },
+      { id: 3, url: '/config/users', name: 'Information' }
+    ]
   }
 ];
 
@@ -32,14 +37,12 @@ const Aside = () => (
         </div>
 
         {menu.links.map(link => (
-          <div key={link}>
-            <a className="block py-3 px-5" href="#">
-              <div className="text-white">
-                <span>#&nbsp;</span>
-                {link}
-              </div>
-            </a>
-          </div>
+          <Link key={link.id} href={link.url} className="text-white block py-3 px-5">
+            <div className="text-white">
+              <span>#&nbsp;</span>
+              {link.name}
+            </div>
+          </Link>
         ))}
       </div>
     ))}

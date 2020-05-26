@@ -1,9 +1,8 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import { counterState } from '../services/recoil/atoms';
-import Layout from '../shared/Layout';
 
-function MainContent() {
+function Welcome() {
   const [counter, setCounter] = useRecoilState(counterState);
   return (
     <div>
@@ -17,14 +16,6 @@ function MainContent() {
         Add +1
       </button>
     </div>
-  );
-}
-
-function Welcome() {
-  return (
-    <Layout>
-      <MainContent />
-    </Layout>
   );
 }
 

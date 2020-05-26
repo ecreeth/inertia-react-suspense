@@ -1,7 +1,7 @@
 import React from 'react';
 import { Inertia } from '@inertiajs/inertia';
 
-function MainApplication({ initialPage, resolveComponent }) {
+function Application({ initialPage, resolveComponent }) {
   const [page, setPage]: any = React.useState(null);
 
   React.useEffect(() => {
@@ -17,4 +17,4 @@ function MainApplication({ initialPage, resolveComponent }) {
   return page && React.createElement(page.component, { props: page.props });
 }
 
-export default MainApplication;
+export default Application;
