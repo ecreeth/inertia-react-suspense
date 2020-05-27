@@ -18,13 +18,13 @@ Inertia::share('name', Config::get('app.name'));
 
 // Route::middleware('auth')->group(function () {
 
-Route::get('/', fn () => inertia('Welcome', ['layout' => 'Admin']));
+  Route::get('/', fn () => inertia('Welcome'));
 
-Route::get('/about', fn () => inertia('About', ['layout' => 'Admin']));
+  Route::get('/about', fn () => inertia('About'));
 
-Route::get('/contact', fn () => inertia('Contact', ['layout' => 'Admin']));
+  Route::get('/contact', fn () => inertia('Contact'));
 
-Route::get('/config/users', fn () => inertia('Config/Users', ['layout' => 'Admin']));
+  Route::get('/config/users', fn () => inertia('Config/Users'));
 // });
 
-Route::get('/login', fn () => inertia('Auth/Login', ['layout' => 'Login']))->name('login');
+Route::get('/login', fn () => inertia('Auth/Login'))->name('login');

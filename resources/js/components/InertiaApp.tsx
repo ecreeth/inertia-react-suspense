@@ -8,13 +8,24 @@ function Application({ initialPage, resolveComponent }) {
     Inertia.init({
       initialPage,
       resolveComponent,
-      updatePage: (component, props) => {
-        setPage({ component, props });
+      updatePage: (component, props, { preserveState }) => {
+        setPage({
+          component,
+          props,
+          key: preserveState ? page.key : Date.now()
+        });
       }
     });
-  }, []);
+  }, [initialPage, resolveComponent]);
 
-  return page && React.createElement(page.component, { props: page.props });
+  if (!page) {
+    return null;
+  }
+
+  return React.createElement(page.component, {
+    props: page.props,
+    key: page.key
+  });
 }
 
 export default Application;
