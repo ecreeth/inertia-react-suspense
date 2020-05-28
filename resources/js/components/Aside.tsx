@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from './Link';
+import { Link } from '../inertia/index';
 
 const menus = [
   {
@@ -37,7 +37,11 @@ const Aside = () => (
         </div>
 
         {menu.links.map(link => (
-          <Link key={link.id} href={link.url} className="text-white block py-3 px-5">
+          <Link
+            key={link.id}
+            href={link.url}
+            className="text-white block py-3 px-5"
+          >
             <div className="text-white">
               <span>#&nbsp;</span>
               {link.name}

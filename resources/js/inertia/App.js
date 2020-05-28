@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { createElement, useEffect, useState } from 'react';
 import { Inertia } from '@inertiajs/inertia';
 
 function Application({ initialPage, resolveComponent }) {
-  const [page, setPage]: any = React.useState(null);
+  const [page, setPage] = useState({
+    component: null,
+    key: null,
+    props: {}
+  });
 
-  React.useEffect(() => {
+  useEffect(() => {
     Inertia.init({
       initialPage,
       resolveComponent,
@@ -18,11 +22,11 @@ function Application({ initialPage, resolveComponent }) {
     });
   }, [initialPage, resolveComponent]);
 
-  if (!page) {
+  if (!page.component) {
     return null;
   }
 
-  return React.createElement(page.component, {
+  return createElement(page.component, {
     props: page.props,
     key: page.key
   });

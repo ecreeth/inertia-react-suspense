@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { Inertia, shouldIntercept } from '@inertiajs/inertia';
 import { createElement, useCallback } from 'react';
 

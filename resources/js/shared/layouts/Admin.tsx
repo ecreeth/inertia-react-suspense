@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Header, Aside } from '../../components/index';
 
-function AdminLayout({ children }) {
+function Layout({ children }) {
   return (
     <div className="font-sans m-0 antialiased leading-none bg-gray-600">
       <Header />
@@ -18,4 +18,4 @@ function AdminLayout({ children }) {
   );
 }
 
-export default AdminLayout;
+export default Layout;
