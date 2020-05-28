@@ -2,7 +2,7 @@ import React from 'react';
 import { useRecoilValue } from 'recoil';
 import { counterState } from '../services/recoil/atoms';
 
-export default React.memo(function HeaderCounter() {
+function HeaderCounter() {
   const counter = useRecoilValue(counterState);
   return (
     <div>
@@ -14,4 +14,6 @@ export default React.memo(function HeaderCounter() {
       </a>
     </div>
   );
-});
+}
+
+export default React.memo(HeaderCounter);

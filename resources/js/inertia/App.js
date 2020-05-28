@@ -32,4 +32,4 @@ function Application({ initialPage, resolveComponent }) {
   });
 }
 
-export default Application;
+export default React.memo(Application);

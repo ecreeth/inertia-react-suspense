@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../shared/layouts/Admin';
 
 const Contact = () => {
+  console.log('Render [Contact] Page');
   return (
     <Layout>
       <div>
