@@ -2,7 +2,6 @@ import React from 'react';
 import Layout from '../shared/layouts/Admin';
 
 function About() {
-  console.log('Render [About] Page');
   return (
     <Layout>
       <div>
