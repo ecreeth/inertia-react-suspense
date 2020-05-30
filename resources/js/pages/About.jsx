@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../shared/layouts/Admin';
+import Layout from '@/shared/layouts/Admin';
 
 function About() {
   return (

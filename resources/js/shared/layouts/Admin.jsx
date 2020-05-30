@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Header, Aside } from '../../components/index';
+import { Header, Aside } from '@/components/index';
 
 function Layout({ children }) {
   return (

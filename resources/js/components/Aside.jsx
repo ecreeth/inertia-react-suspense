@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '../inertia-react/index';
+import { Link } from '@/inertia-react/index';
 
 const menus = [
   {
@@ -18,9 +18,9 @@ const menus = [
     id: 3,
     title: 'Subscripciones',
     links: [
-      { id: 1, url: '/config/users', name: 'Planes' },
-      { id: 2, url: '/config/users', name: 'Invoices' },
-      { id: 3, url: '/config/users', name: 'Information' }
+      { id: 7, url: '/config/users', name: 'Planes' },
+      { id: 8, url: '/config/users', name: 'Invoices' },
+      { id: 9, url: '/config/users', name: 'Information' }
     ]
   }
 ];
