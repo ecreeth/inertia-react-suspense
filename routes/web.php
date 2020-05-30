@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\{Config, Route};
+use Illuminate\Support\Facades\{Auth, Config, Route};
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 
 /*
@@ -14,9 +15,22 @@ use Inertia\Inertia;
 |
 */
 
+Inertia::share([
+  'errors' => function () {
+    return Session::get('errors')
+      ? Session::get('errors')->getBag('default')->getMessages()
+      : (object) [];
+  }
+]);
+
+// Auth
+Auth::routes();
+
+// Global Shared Data
 Inertia::share('name', Config::get('app.name'));
 
-// Route::middleware('auth')->group(function () {
+// Admin Routes
+Route::middleware('auth')->group(function () {
 
   Route::get('/', fn () => inertia('Welcome'));
 
@@ -25,6 +39,4 @@ Inertia::share('name', Config::get('app.name'));
   Route::get('/contact', fn () => inertia('Contact'));
 
   Route::get('/config/users', fn () => inertia('Config/Users'));
-// });
-
-Route::get('/login', fn () => inertia('Auth/Login'))->name('login');
+});
