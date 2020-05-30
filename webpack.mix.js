@@ -12,7 +12,7 @@ const path = require('path');
  */
 
 mix
-  .ts('resources/js/app', 'public/js')
+  .react('resources/js/app', 'public/js')
   // .extract()
   .postCss('resources/css/app.css', 'public/css', [require('tailwindcss')])
   .webpackConfig({
@@ -22,15 +22,6 @@ mix
         '@': path.resolve('resources/js')
       },
       extensions: ['*', '.js', '.jsx', '.ts', '.tsx']
-    },
-    module: {
-      rules: [
-        {
-          test: /\.tsx?$/,
-          loader: 'ts-loader',
-          exclude: /node_modules/
-        }
-      ]
     }
   });
 

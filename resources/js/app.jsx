@@ -1,13 +1,12 @@
-// @ts-nocheck
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { RecoilRoot } from 'recoil';
 import Application from './inertia-react/App';
 
-const root: any = document.getElementById('app');
-const data: any = JSON.parse(root.dataset.page);
+const root = document.getElementById('app');
+const data = JSON.parse(root.dataset.page);
 
-ReactDOM.render(
+ReactDOM.unstable_createRoot(root).render(
   <React.StrictMode>
     <RecoilRoot>
       <Application
@@ -17,6 +16,5 @@ ReactDOM.render(
         }
       />
     </RecoilRoot>
-  </React.StrictMode>,
-  root
+  </React.StrictMode>
 );
