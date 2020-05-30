@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import Layout from '@/shared/layouts/Admin';
-const MainContent = React.lazy(() => import('./includes/MainContent'));
+const MainContent = React.lazy(() => import('./MainContent'));
 
 function Welcome() {
   return (

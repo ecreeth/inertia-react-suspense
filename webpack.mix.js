@@ -16,7 +16,7 @@ mix
   // .extract()
   .postCss('resources/css/app.css', 'public/css', [require('tailwindcss')])
   .webpackConfig({
-    output: { chunkFilename: '[name].js?id=[chunkhash]' },
+    output: { chunkFilename: 'js/[name].js?id=[chunkhash]' },
     resolve: {
       alias: {
         '@': path.resolve('resources/js')
