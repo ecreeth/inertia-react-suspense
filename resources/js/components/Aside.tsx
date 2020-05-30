@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '../inertia/index';
+import { Link } from '../inertia-react/index';
 
 const menus = [
   {

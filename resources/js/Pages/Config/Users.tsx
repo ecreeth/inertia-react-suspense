@@ -1,11 +1,11 @@
 import React from 'react';
-import TestLayout from '../../shared/layouts/Test';
+import Layout from '../../shared/layouts/Admin';
 
 function Users() {
   return (
-    <TestLayout>
+    <Layout>
       <h1>Hello world users!</h1>
-    </TestLayout>
+    </Layout>
   );
 }
 

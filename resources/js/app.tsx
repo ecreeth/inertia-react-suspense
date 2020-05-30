@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { RecoilRoot } from 'recoil';
-import Application from './inertia/App';
+import Application from './inertia-react/App';
 
 const root: any = document.getElementById('app');
 const data: any = JSON.parse(root.dataset.page);
