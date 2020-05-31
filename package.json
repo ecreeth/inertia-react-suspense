@@ -21,14 +21,13 @@
     "cross-env": "^7.0",
     "laravel-mix": "v5.0",
     "resolve-url-loader": "^3.1",
-    "tailwindcss": "1.4.6",
-    "typescript": "^3.9.3"
+    "tailwindcss": "1.4.6"
   },
   "dependencies": {
     "@inertiajs/inertia": "^0.1.9",
     "react": "^0.0.0-experimental-33c3af284",
     "react-dom": "^0.0.0-experimental-33c3af284",
     "react-helmet": "^6.0.0",
-    "recoil": "^0.0.7"
+    "recoil": "^0.0.8"
   }
 }

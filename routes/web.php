@@ -15,19 +15,18 @@ use Inertia\Inertia;
 |
 */
 
+// Auth
+Auth::routes();
+
+// Global Shared Data
 Inertia::share([
+  'name', Config::get('app.name'),
   'errors' => function () {
     return Session::get('errors')
       ? Session::get('errors')->getBag('default')->getMessages()
       : (object) [];
   }
 ]);
-
-// Auth
-Auth::routes();
-
-// Global Shared Data
-Inertia::share('name', Config::get('app.name'));
 
 // Admin Routes
 Route::middleware('auth')->group(function () {
