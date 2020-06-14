@@ -886,6 +886,11 @@
     postcss "7.0.27"
     purgecss "^2.1.2"
 
+"@inertiajs/inertia-react@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@inertiajs/inertia-react/-/inertia-react-0.1.6.tgz#74538a385dc214b9711e98ec2b92ab7880848409"
+  integrity sha512-Wm8L/J/Hv+DokLYK1Sxs5JbxM3qWyLfbgM5SIQFBur42VvSjYVunLDALSximNGLAWgjcIkysZGy1oHZgRBwu4A==
+
 "@inertiajs/inertia@^0.1.9":
   version "0.1.9"
   resolved "https://registry.yarnpkg.com/@inertiajs/inertia/-/inertia-0.1.9.tgz#29862f3f61fc07b7b9433f4b005355fbf6e0fe7c"

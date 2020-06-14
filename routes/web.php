@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\{Auth, Config, Route};
+use Illuminate\Support\Facades\{Auth, Route};
 use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 
@@ -20,7 +20,7 @@ Auth::routes();
 
 // Global Shared Data
 Inertia::share([
-  'name', Config::get('app.name'),
+  'name' => 'Luis M. Alvarado',
   'errors' => function () {
     return Session::get('errors')
       ? Session::get('errors')->getBag('default')->getMessages()
@@ -29,7 +29,7 @@ Inertia::share([
 ]);
 
 // Admin Routes
-Route::middleware('auth')->group(function () {
+// Route::middleware('auth')->group(function () {
 
   Route::get('/', fn () => inertia('Welcome'));
 
@@ -38,4 +38,4 @@ Route::middleware('auth')->group(function () {
   Route::get('/contact', fn () => inertia('Contact'));
 
   Route::get('/config/users', fn () => inertia('Config/Users'));
-});
+// });

@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@inertiajs/inertia": "^0.1.9",
+    "@inertiajs/inertia-react": "^0.1.6",
     "react": "^0.0.0-experimental-33c3af284",
     "react-dom": "^0.0.0-experimental-33c3af284",
     "react-helmet": "^6.0.0",

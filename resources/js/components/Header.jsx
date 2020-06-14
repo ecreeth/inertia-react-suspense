@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from '@ecreeth/inertia-react';
+import { InertiaLink as Link } from '@inertiajs/inertia-react';
 import HeaderCounter from './HeaderCounter';
 
 const links = [
